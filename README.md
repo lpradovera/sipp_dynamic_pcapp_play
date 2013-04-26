@@ -1,7 +1,7 @@
 Dynamic PCAP play patch for SIPp
 =======================
 
-This patch allows SIPp to replay the same PCAP file of an RTP capture. Normally, RTP clients will reject packets that have the same Sequence number and/or a wrong Timestamp.
+This patch allows [SIPp](http://sipp.sourceforge.net/) to replay the same PCAP file of an RTP capture. Normally, RTP clients will reject packets that have the same Sequence number and/or a wrong Timestamp.
 
 It helps in building SIPp scenarios that involve many PCAP playback operations to be built more easily.
 
@@ -14,6 +14,16 @@ The patch adds a new exec action to SIPp named "play\_dyn\_pcap\_audio", to be u
   <exec play_dyn_pcap_audio="pcap/dtmf_2833_4.pcap"/>
 </action>
 ```
+
+Applying the patch
+------------------
+The patch has been applied and confimed working on SIPp stable v3.3 and on SVN checkouts from the same period.
+
+It is applied (on OSX) using
+```
+patch -p1 -i /path/to/sipp_support_dynamic_pcap_play.diff
+```
+from inside the SIPp source tree.
 
 History
 -------
